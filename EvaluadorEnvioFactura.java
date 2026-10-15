@@ -6,7 +6,7 @@ public class EvaluadorEnvioFactura {
         boolean cuponValido = true;
         double costoEnvio = 0.0;
 
-        if (motoCompra >= 200000 || !esClienteVIP) {
+        if (motoCompra >= 200000 || esClienteVIP) {
             costoEnvio = 0.0;
         } else if (cuponValido && motoCompra > 100000) {
             costoEnvio = 5000.0;
