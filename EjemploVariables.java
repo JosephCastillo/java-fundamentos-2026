@@ -10,5 +10,7 @@ public class EjemploVariables{
         System.out.println("Candidato: " + nombreCompleto);
         System.out.println("Edad: " + edad + "años");
         System.out.println("Aspiración salarial: $" + salarioDeseado);
+        System.out.println("Estado de empleado: " + estadoEmpleado);
+        System.out.println("Inicial del nombre: " + inicialNombre);
     }
 }
