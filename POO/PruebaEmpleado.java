@@ -18,6 +18,20 @@ public class PruebaEmpleado {
         Empleado empleado2 = new Empleado("EMP-02", "Camila Ramirez");
 
         /*
+         * Crea un objeto de Departamento (ej: código "DEP-IT", nombre
+         * "Tecnología y Desarrollo", presupuesto 150000000.0).
+         */
+
+        Departamento depIT = new Departamento("DEP-IT", "Tecnología y Desarrollo", 150000000.0);
+
+        /*
+         * Asigna ese departamento a tu primer empleado
+         * (empleado1.setDepartamento(depIT)).
+         */
+
+        empleado1.setDepartamento(depIT);
+
+        /*
          * Intenta reducirle el salario al primer empleado (ej: a $2.000.000) para
          * verificar que el setter bloquee la operación.
          */

@@ -11,6 +11,10 @@ public class Empleado {
     private String nombre;
     private double salarioBase;
     private boolean activo;
+    /*
+     * Agrega un nuevo atributo privado: departamento de tipo Departamento.
+     */
+    private Departamento departamento;
 
     /*
      * Sobrecarga de constructores:
@@ -76,6 +80,18 @@ public class Empleado {
     }
 
     /*
+     * Agrega un getter y un setter para departamento.
+     */
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+
+    /*
      * Setter controlado para salarioBase: El método setSalarioBase(double
      * nuevoSalario) solo debe actualizar el salario si el monto introducido es
      * mayor o igual al salario base actual (en Colombia no se puede reducir el
@@ -86,7 +102,7 @@ public class Empleado {
         if (salarioBase >= this.salarioBase) {
             this.salarioBase = salarioBase;
         } else {
-            System.out.println("El salario base debe se mayor al salario base establecido anteriormente");
+            System.out.println("El salario base debe ser mayor al salario base establecido anteriormente");
         }
     }
 
@@ -104,11 +120,26 @@ public class Empleado {
      */
 
     public void mostrarFicha() {
+
+        /*
+        * Modifica mostrarFicha() para que, si el departamento no es null, imprima el nombre del departamento al que pertenece. Si es * null, debe imprimir "Sin departamento asignado".
+        */
+        String nombreDepartamento;
+
+        if(departamento != null){
+            nombreDepartamento = departamento.getNombre();
+        }else{
+            nombreDepartamento = "Sin departamento asignado";
+        }
+
+        // Uso de operador ternario para convertir el booleano a texto
+        String estadoTexto = this.activo ? "ACTIVO" : "INACTIVO";
         System.out.println(
-                "- ID: " + id +
+                        "- ID: " + id +
                         " - Nombre:  " + nombre +
                         " - Salario base: " + salarioBase +
-                        " - Estado: " + activo);
+                        " - Estado: " + estadoTexto +
+                        " - Nombre departamento: " + nombreDepartamento);
     }
 
 }
