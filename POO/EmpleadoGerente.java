@@ -16,7 +16,7 @@ public class EmpleadoGerente extends Empleado{
     @Override
     public void mostrarFicha(){
         super.mostrarFicha();
-        System.out.println("Salario base: " + getSalarioBase());
+        System.out.println("Salario base + bonificación: " + getSalarioBase());
 
     }
 }
