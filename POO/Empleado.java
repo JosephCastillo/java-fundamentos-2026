@@ -1,6 +1,6 @@
 package POO;
 
-public class Empleado {
+public abstract class Empleado implements Notificable {
 
     /*
      * Atributos privados: id (String), nombre (String), salarioBase (double) y
@@ -114,6 +114,13 @@ public class Empleado {
         this.activo = false;
     }
 
+    public abstract double calcularBonoAnual();
+
+     
+    public void enviarNotificacion(String mensaje){
+        System.out.println("Enviando correo a: " + nombre + ": " + mensaje);
+    } 
+
     /*
      * Método public void mostrarFicha(): Imprime el ID, nombre, salario y el estado
      * del empleado ("ACTIVO" o "INACTIVO").
@@ -122,20 +129,22 @@ public class Empleado {
     public void mostrarFicha() {
 
         /*
-        * Modifica mostrarFicha() para que, si el departamento no es null, imprima el nombre del departamento al que pertenece. Si es * null, debe imprimir "Sin departamento asignado".
-        */
+         * Modifica mostrarFicha() para que, si el departamento no es null, imprima el
+         * nombre del departamento al que pertenece. Si es * null, debe imprimir
+         * "Sin departamento asignado".
+         */
         String nombreDepartamento;
 
-        if(departamento != null){
+        if (departamento != null) {
             nombreDepartamento = departamento.getNombre();
-        }else{
+        } else {
             nombreDepartamento = "Sin departamento asignado";
         }
 
         // Uso de operador ternario para convertir el booleano a texto
         String estadoTexto = this.activo ? "ACTIVO" : "INACTIVO";
         System.out.println(
-                        "- ID: " + id +
+                "- ID: " + id +
                         " - Nombre:  " + nombre +
                         " - Salario base: " + salarioBase +
                         " - Estado: " + estadoTexto +
